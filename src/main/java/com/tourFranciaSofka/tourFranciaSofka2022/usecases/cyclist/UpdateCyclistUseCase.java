@@ -1,4 +1,4 @@
-package com.tourFranciaSofka.tourFranciaSofka2022.usecases;
+package com.tourFranciaSofka.tourFranciaSofka2022.usecases.cyclist;
 
 import com.tourFranciaSofka.tourFranciaSofka2022.config.mappers.CyclistMapper;
 import com.tourFranciaSofka.tourFranciaSofka2022.dtos.CyclistDTO;
@@ -7,17 +7,17 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 @Service
-public class PostCyclistUseCase {
-    private final CyclistRepository cyclistRepository;
-    private final CyclistMapper cyclistMapper;
+public class UpdateCyclistUseCase {
+    private CyclistRepository cyclistRepository;
+    private CyclistMapper cyclistMapper;
 
-    public PostCyclistUseCase(CyclistRepository cyclistRepository, CyclistMapper cyclistMapper){
+
+    public UpdateCyclistUseCase(CyclistRepository cyclistRepository, CyclistMapper cyclistMapper) {
         this.cyclistRepository = cyclistRepository;
         this.cyclistMapper = cyclistMapper;
     }
 
-    public Mono<CyclistDTO> postCyclist(CyclistDTO cyclistDTO){
+    public Mono<CyclistDTO> updateCyclist(CyclistDTO cyclistDTO) {
         return cyclistRepository.save(cyclistMapper.cyclistDTOToCyclist(cyclistDTO)).map(cyclistMapper::cyclistToCyclistDTO);
     }
-
 }

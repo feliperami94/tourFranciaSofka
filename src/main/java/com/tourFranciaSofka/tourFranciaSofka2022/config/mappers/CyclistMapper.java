@@ -12,6 +12,7 @@ public class CyclistMapper {
     public Cyclist cyclistDTOToCyclist(CyclistDTO cyclistDTO){
         return new Cyclist(
                 cyclistDTO.getId(),
+                cyclistDTO.getCyclistName(),
                 cyclistDTO.getUniqueNumber(),
                 cyclistDTO.getTeamId(),
                 cyclistDTO.getNationality()
@@ -22,6 +23,7 @@ public class CyclistMapper {
     public CyclistDTO cyclistToCyclistDTO(Cyclist cyclist){
         return new CyclistDTO(
                 cyclist.getId(),
+                cyclist.getCyclistName(),
                 cyclist.getUniqueNumber(),
                 cyclist.getTeamId(),
                 cyclist.getNationality()

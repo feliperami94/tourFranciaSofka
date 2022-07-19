@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class CyclistDTO {
     private String id;
+    private String cyclistName;
     private String uniqueNumber;
     private String teamId;
     private String nationality;

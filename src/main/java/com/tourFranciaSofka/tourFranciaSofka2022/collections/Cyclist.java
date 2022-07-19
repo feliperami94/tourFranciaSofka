@@ -15,6 +15,7 @@ import java.util.List;
 public class Cyclist {
     @Id
     private String id;
+    private String cyclistName;
     private String uniqueNumber;
     private String teamId;
     private String nationality;
