@@ -1,7 +1,9 @@
-package com.tourFranciaSofka.tourFranciaSofka2022.router.cyclist;
+package com.tourFranciaSofka.tourFranciaSofka2022.router.team;
 
 import com.tourFranciaSofka.tourFranciaSofka2022.dtos.CyclistDTO;
+import com.tourFranciaSofka.tourFranciaSofka2022.dtos.TeamDTO;
 import com.tourFranciaSofka.tourFranciaSofka2022.usecases.cyclist.GetCyclistsByTeamCodeUseCase;
+import com.tourFranciaSofka.tourFranciaSofka2022.usecases.team.GetTeamsByCountryUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -13,12 +15,12 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class GetCyclistsByTeamCode {
+public class GetTeamsByCountryRoute {
     @Bean
-    public RouterFunction<ServerResponse> GetCyclistsByTeamCode(GetCyclistsByTeamCodeUseCase getCyclistsByTeamCodeUseCase){
-        return route(GET("v1/api/getCyclistsByTeamCode/{teamCode}"),
+    public RouterFunction<ServerResponse> GetTeamsByCountry(GetTeamsByCountryUseCase getTeamsByCountryUseCase){
+        return route(GET("v1/api/getTeamsByCountry/{country}"),
                 request -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
-                        .body(BodyInserters.fromPublisher(getCyclistsByTeamCodeUseCase.getCyclistsByTeamCode(request.pathVariable("teamCode")), CyclistDTO.class)));
+                        .body(BodyInserters.fromPublisher(getTeamsByCountryUseCase.getTeamsByCountry(request.pathVariable("country")), TeamDTO.class)));
     }
 }

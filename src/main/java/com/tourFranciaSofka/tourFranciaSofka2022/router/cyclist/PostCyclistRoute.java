@@ -2,6 +2,7 @@ package com.tourFranciaSofka.tourFranciaSofka2022.router.cyclist;
 
 import com.tourFranciaSofka.tourFranciaSofka2022.dtos.CyclistDTO;
 import com.tourFranciaSofka.tourFranciaSofka2022.usecases.cyclist.PostCyclistUseCase;
+import com.tourFranciaSofka.tourFranciaSofka2022.usecases.team.UpdateTeamUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;

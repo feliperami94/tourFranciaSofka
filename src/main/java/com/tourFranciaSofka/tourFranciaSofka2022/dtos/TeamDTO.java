@@ -18,9 +18,10 @@ public class TeamDTO {
     private String teamName;
     @Size(max = 3, message = "The teamcode must have a maximum of 3 characters")
     private String teamCode;
-    @NotNull
+    @NotBlank
     private String country;
     @NotNull
+    @Size(max = 8, message = "The team must have a maximum of 8 cyclists")
     private List<String> cyclistsIDs;
 
 }
