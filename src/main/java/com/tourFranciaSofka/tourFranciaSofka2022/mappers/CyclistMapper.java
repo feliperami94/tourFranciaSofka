@@ -1,4 +1,4 @@
-package com.tourFranciaSofka.tourFranciaSofka2022.config.mappers;
+package com.tourFranciaSofka.tourFranciaSofka2022.mappers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tourFranciaSofka.tourFranciaSofka2022.collections.Cyclist;
@@ -14,7 +14,7 @@ public class CyclistMapper {
                 cyclistDTO.getId(),
                 cyclistDTO.getCyclistName(),
                 cyclistDTO.getUniqueNumber(),
-                cyclistDTO.getTeamId(),
+                cyclistDTO.getTeamCode(),
                 cyclistDTO.getNationality()
         );
     }
@@ -25,7 +25,7 @@ public class CyclistMapper {
                 cyclist.getId(),
                 cyclist.getCyclistName(),
                 cyclist.getUniqueNumber(),
-                cyclist.getTeamId(),
+                cyclist.getTeamCode(),
                 cyclist.getNationality()
         );
     }

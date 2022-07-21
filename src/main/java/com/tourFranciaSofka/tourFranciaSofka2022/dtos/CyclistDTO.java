@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Data
@@ -12,8 +14,12 @@ import java.util.List;
 @AllArgsConstructor
 public class CyclistDTO {
     private String id;
+    @NotBlank
     private String cyclistName;
-    private String uniqueNumber;
-    private String teamId;
+    @Size(min = 0, max = 999, message = "The unique number code must have a maximum of 3 characters")
+    private Integer uniqueNumber;
+    @NotBlank
+    private String teamCode;
+    @NotBlank
     private String nationality;
 }

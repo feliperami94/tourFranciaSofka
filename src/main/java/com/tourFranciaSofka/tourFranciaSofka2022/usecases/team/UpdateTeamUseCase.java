@@ -1,6 +1,6 @@
 package com.tourFranciaSofka.tourFranciaSofka2022.usecases.team;
 
-import com.tourFranciaSofka.tourFranciaSofka2022.config.mappers.TeamMapper;
+import com.tourFranciaSofka.tourFranciaSofka2022.mappers.TeamMapper;
 import com.tourFranciaSofka.tourFranciaSofka2022.dtos.TeamDTO;
 import com.tourFranciaSofka.tourFranciaSofka2022.repository.TeamRepository;
 import org.springframework.stereotype.Service;

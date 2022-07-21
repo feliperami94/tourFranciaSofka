@@ -11,6 +11,8 @@ import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
+import javax.validation.Valid;
+
 import static org.springframework.web.reactive.function.server.RequestPredicates.POST;
 import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
@@ -24,6 +26,9 @@ public class PostTeamRoute {
                         .flatMap(postTeamUseCase::postTeam)
                         .flatMap(teamDTO -> ServerResponse.status(HttpStatus.CREATED)
                                 .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(teamDTO)));
+                                .bodyValue(teamDTO))
+                        .onErrorResume((error) -> ServerResponse.status(HttpStatus.BAD_REQUEST).build())
+
+        );
     }
 }

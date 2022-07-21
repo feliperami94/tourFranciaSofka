@@ -1,6 +1,6 @@
 package com.tourFranciaSofka.tourFranciaSofka2022.usecases.cyclist;
 
-import com.tourFranciaSofka.tourFranciaSofka2022.config.mappers.CyclistMapper;
+import com.tourFranciaSofka.tourFranciaSofka2022.mappers.CyclistMapper;
 import com.tourFranciaSofka.tourFranciaSofka2022.repository.CyclistRepository;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;

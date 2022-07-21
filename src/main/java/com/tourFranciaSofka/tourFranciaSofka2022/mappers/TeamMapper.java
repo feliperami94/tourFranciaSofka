@@ -1,4 +1,4 @@
-package com.tourFranciaSofka.tourFranciaSofka2022.config.mappers;
+package com.tourFranciaSofka.tourFranciaSofka2022.mappers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tourFranciaSofka.tourFranciaSofka2022.collections.Team;
